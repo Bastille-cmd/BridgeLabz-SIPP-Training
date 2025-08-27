@@ -1,0 +1,13 @@
+CLASS WordCounter
+    METHOD countWords(paragraph)
+        CONVERT paragraph to lowercase
+        REMOVE punctuation
+        SPLIT paragraph into words
+        CREATE Map<word, count>
+        FOR each word
+            IF word exists in map
+                INCREMENT count
+            ELSE
+                ADD word with count = 1
+        SORT map by count descending
+        DISPLAY words and counts

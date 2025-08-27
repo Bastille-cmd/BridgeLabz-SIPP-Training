@@ -1,0 +1,22 @@
+CLASS Ticket
+    ATTRIBUTES: movieName, seatNumber, price, bookingStatus
+
+CLASS Theatre
+    ATTRIBUTES: schedule, availableSeats, ticketsList
+    METHOD issueTicket(movie, seat, customer)
+        IF seat available
+            CREATE new Ticket
+            UPDATE availableSeats
+            RETURN ticket
+    METHOD cancelTicket(ticket)
+        SET ticket.bookingStatus = cancelled
+        UPDATE availableSeats
+
+CLASS Customer
+    ATTRIBUTES: name, bookedTickets
+    METHOD bookTicket(theatre, movie, seat)
+        ticket = theatre.issueTicket(movie, seat, self)
+        ADD ticket to bookedTickets
+    METHOD cancelTicket(theatre, ticket)
+        theatre.cancelTicket(ticket)
+        REMOVE ticket from bookedTickets

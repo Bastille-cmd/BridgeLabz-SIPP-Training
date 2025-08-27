@@ -1,0 +1,15 @@
+CLASS AttendanceSystem
+    ATTRIBUTE: attendance[students][days]
+
+    METHOD markAttendance(student, day, value)
+        attendance[student][day] = value
+
+    METHOD updateAttendance(student, day, value)
+        attendance[student][day] = value
+
+    METHOD monthlyReport(student)
+        count = 0
+        FOR each day in attendance[student]
+            IF value == 'P'
+                count++
+        RETURN count

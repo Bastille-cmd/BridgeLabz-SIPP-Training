@@ -1,0 +1,19 @@
+CLASS User
+    ATTRIBUTES: username, password
+    METHOD login()
+
+CLASS Student EXTENDS User
+    ATTRIBUTE: enrolledCourses
+    METHOD login()
+        IF valid username AND password AND student enrolled
+            SHOW available exams
+        ELSE
+            DENY access
+
+CLASS Admin EXTENDS User
+    ATTRIBUTE: adminPrivileges
+    METHOD login()
+        IF valid username AND password AND has adminPrivileges
+            SHOW exam management tools
+        ELSE
+            DENY access

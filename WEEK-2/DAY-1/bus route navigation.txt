@@ -1,0 +1,18 @@
+CLASS Node
+    ATTRIBUTES: stopName, next
+
+CLASS BusRoute
+    ATTRIBUTE: head
+    METHOD insertStop(afterStop, newStop)
+        TRAVERSE list
+        IF current.stopName == afterStop
+            INSERT new Node(newStop) after current
+    METHOD deleteStop(stopName)
+        TRAVERSE list
+        REMOVE node with stopName
+    METHOD searchStop(stopName)
+        TRAVERSE list
+        IF found
+            RETURN true
+        ELSE
+            RETURN false
